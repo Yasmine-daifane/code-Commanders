@@ -19,9 +19,17 @@ class Utilisateur extends Model
         'Password',
     ];
 
-    public function consomationEau()
+    public function machines()
     {
-        return $this->hasMany(ConsomationEau::class);
+        return $this->hasMany(Machines::class);
+    }
+    public function factures()
+    {
+        return $this->hasMany(Facture::class);
+    }
+    public function objectifs()
+    {
+        return $this->hasMany(Objectif::class);
     }
 }
 

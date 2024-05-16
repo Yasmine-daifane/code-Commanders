@@ -5,22 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class EauConsommation extends Model
+class Objectif extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nomConsommation',
-        'descriptionConsommation',
-        'dateConsommation',
-        'quantiteConsommation',
+        'nomObjectif',
+        'descriptionObjectif',
+        'pourcentagepreferer',
+        'achieve',
+        'utilisateur_id'
     ];
 
     public function utilisateurs()
     {
         return $this->belongsTo(Utilisateur::class);
-    }
-    public function categorie_consomations()
-    {
-        return $this->belongsTo(CategorieConsomation::class);
     }
 }
